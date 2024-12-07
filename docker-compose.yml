@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILD_VERSION: ${BUILD_VERSION}
+    ports:
+      - "3000:3000"
+    environment:
+      BUILD_VERSION: ${BUILD_VERSION}
