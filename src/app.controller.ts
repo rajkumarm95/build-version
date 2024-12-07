@@ -9,4 +9,11 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('version')
+  getVersion(): { build: string } {
+    // Fetch the BUILD_VERSION from environment variables
+    const buildVersion = process.env.BUILD_VERSION || 'Unknown';
+    return { build: buildVersion };
+  }
 }
