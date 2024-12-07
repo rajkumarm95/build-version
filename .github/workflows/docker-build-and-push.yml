@@ -38,7 +38,6 @@ jobs:
             BUILD_VERSION=${{ env.BUILD_VERSION }}
           tags: |
             ${{ env.IMAGE_NAME }}:latest
-            ${{ env.IMAGE_NAME }}:${{ env.BUILD_VERSION }}
 
       - name: Log out from Docker Hub
         run: docker logout
